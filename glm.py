@@ -9,7 +9,10 @@ if "key" not in st.session_state:
     st.session_state.key = None
     
 key = st.sidebar.text_input("Your key", type="password") 
-model=st.sidebar.text_input("Model", type="default",value="glm-3-turbo") 
+model=st.sidebar.selectbox(
+    'Model',
+    ('glm-3-turbo', 'glm-4', 'glm-4v'))
+
 if not key:
     st.info("Please add your key to continue.")
 else:
